@@ -144,6 +144,9 @@ function inputNumber(e){
     screenValue.textContent=equation.inputNumber;
 }
 function inputNumberKey(e){
+    if(decimal.disabled==true && e.key=='.'){
+        return;
+    }
     if(equation.operators.length==0 && equation.numbers.length==1 && equation.inputNumber!=''){
         equation.numbers.pop();
     }
