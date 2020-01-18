@@ -172,16 +172,14 @@ function fullClear(){
     screenValue.textContent=0;
 }
 function back(){
-    equation.inputNumber = equation.inputNumber.substring(0,equation.inputNumber.length-1);
-    if(equation.inputNumber.indexOf('')==-1){
-        decimal.disabled=false;
-    }
     if(equation.inputNumber==''){
         fullClear();
     }
-    else{
+    equation.inputNumber = equation.inputNumber.substring(0,equation.inputNumber.length-1);
+    if(equation.inputNumber.indexOf('.')==-1){
+        decimal.disabled=false;
+    }
     screenValue.textContent=equation.inputNumber;
-    }    
 }
 cleared.addEventListener('click',fullClear);
 for(let i = 0; i < operators.length;i++){
